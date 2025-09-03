@@ -11,7 +11,7 @@ int main()
     //set original average temps
     int new_york_temp = 85;
     int denver_temp = 88;
-    int phoenix_temp = 105;
+    int phoenix_temp = 106;
 
     //get new average temps
     double new_york_new_temp = new_york_temp * 1.02;
