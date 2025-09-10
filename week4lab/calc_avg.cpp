@@ -17,5 +17,5 @@ int main()
 
     double avg = (num1 + num2 + num3) / 3.0;
 
-    cout << "The average is " << avg;
+    cout << "The average is " << avg << endl;
 }
