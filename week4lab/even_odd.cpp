@@ -8,19 +8,25 @@ using namespace std;
 
 int main()
 {
-    int num;
+    int num = 0;
 
     cout << "Enter a whole number: ";
-    cin >> num;
+
+    while((!(cin >> num)))
+    {
+        cout << "Invalid.\nEnter an integer: ";
+        cin.clear();
+        cin.ignore(10,'\n');
+    }
 
     int even_odd = num % 2;
 
     if(even_odd == 0)
     {
-        cout << "Your number is even.";
+        cout << "Your number, " << num << ", is even." << endl;
     }
     else
     {
-        cout << "Your number is odd";
+        cout << "Your number is odd" << endl;
     }
 }
