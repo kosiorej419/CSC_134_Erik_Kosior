@@ -18,7 +18,7 @@ int main()
 
     cout << fixed << setprecision(2) << "Angle: " << angle << "\nHypotenuse: " << hypotenuse << endl;
 
-    if (angle >= 53.13 && angle < 53.14){
+    if (angle >= 53.13 && angle <53.131){
         cout << "This is a 3-4-5 triangle." << endl;
     }
     else{
