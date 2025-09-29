@@ -9,77 +9,17 @@ using namespace std;
 int main()
 {
     int multiple = 0;
+    int num = 1;
 
-    for(int i = 1; i <= 1; i++)
-    {
-        for(i = 1; i <= 10; i++)
+   for(int i = 1; i <=10; i++) // goes through numbers 1-10
+   {
+        for(int count = 1; count <= 10; count++) //  multiples num by 1-10
         {
-            multiple = 1 * i;
+            multiple = num * count;
             cout << multiple << "\t";
         }
         cout << endl;
 
-        for(int count = 1; count <= 10; count++)
-        {
-            multiple = 2 * count;
-            cout << multiple << "\t";
-        }
-        cout << endl;
-
-        for(i = 1; i <= 10; i++)
-        {
-            multiple = 3 * i;
-            cout << multiple << "\t";
-        }
-        cout << endl;
-
-        for(i = 1; i <= 10; i++)
-        {
-            multiple = 4 * i;
-            cout << multiple << "\t";
-        }
-        cout << endl;
-
-        for(i = 1; i <= 10; i++)
-        {
-            multiple = 5 * i;
-            cout << multiple << "\t";
-        }
-        cout << endl;
-
-        for(i = 1; i <= 10; i++)
-        {
-            multiple = 6 * i;
-            cout << multiple << "\t";
-        }
-        cout << endl;
-
-        for(i = 1; i <= 10; i++)
-        {
-            multiple = 7 * i;
-            cout << multiple << "\t";
-        }
-        cout << endl;
-
-        for(i = 1; i <= 10; i++)
-        {
-            multiple = 8 * i;
-            cout << multiple << "\t";
-        }
-        cout << endl;
-
-        for(i = 1; i <= 10; i++)
-        {
-            multiple = 9 * i;
-            cout << multiple << "\t";
-        }
-        cout << endl;
-
-        for(i = 1; i <= 10; i++)
-        {
-            multiple = 10 * i;
-            cout << multiple << "\t";
-        }
-        cout << endl;
-    }
+        num++;
+   }
 }
