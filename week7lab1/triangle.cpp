@@ -1,6 +1,6 @@
 //@author: Erik Kosior
 //@date: 9/29/2025
-//@purpose: print a right triangle with asteriks using for loops
+//@purpose: print a right triangle with asterisks using for loops
 
 #include <iostream>
 
