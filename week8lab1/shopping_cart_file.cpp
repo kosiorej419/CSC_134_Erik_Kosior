@@ -18,7 +18,7 @@ int main()
     outputFile << "product code     qty     price\n";
     outputFile << "     789         7       $12.00\n";
     outputFile << "\n";
-    outputFile << "\t\t\t\t\t\tTotal: $84.00";
+    outputFile << "\t\t\t\t\t\tTotal: $84.00" << endl;
 
     outputFile.close();
 }

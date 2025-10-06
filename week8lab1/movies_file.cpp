@@ -18,7 +18,7 @@ int main()
     outputFile << "Dead Pool\n";
     outputFile << "X-Men First Class\n";
     outputFile << "Star Wars Espisode V\n";
-    outputFile << "Get Out";
+    outputFile << "Get Out" << endl;
     
     outputFile.close();
 }
