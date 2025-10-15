@@ -14,9 +14,9 @@ int main()
 
     inputFile.open("C:\\CSC_134_Erik_Kosior\\week8lab2\\friends.txt");
 
-    for(line; getline(inputFile, line);)
+    while(getline(inputFile, line)) //reads entire line
     {
-        cout << line << endl;
+        cout << line << endl; // prints line
     }
 
     inputFile.close();
