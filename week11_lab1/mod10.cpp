@@ -12,7 +12,7 @@ using namespace std;
 int main()
 {
     string card_num = "4012888888881881";
-    string ch;
+    string ch; // hold each character as string
     int num;
     const int SIZE = card_num.length();
     int reverse_num[SIZE];
@@ -21,7 +21,7 @@ int main()
     for (int i = SIZE - 1; i >= 0; i--)
     {
         ch = card_num[i];
-        num = stoi(ch);
+        num = stoi(ch); // turns character to int
         reverse_num[p] = num;
         p++;
     }
