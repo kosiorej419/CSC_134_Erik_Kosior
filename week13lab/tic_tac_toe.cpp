@@ -9,8 +9,6 @@ using namespace std;
 
 int main()
 {
-    string x = "X";
-    string o = "O";
     string turnSymbol = ""; // symbol for the turn alternates between X and O
     int row = 0;
     int column = 0;
@@ -33,11 +31,9 @@ int main()
     while (win == false)
     {
         if ((turn % 2) == 0){       // even turns are O
-            marks[row - 1][column -1] = "O";
             turnSymbol = "O";
         }
         else{                      // odd turns are X
-            marks[row - 1][column - 1] = "X";
             turnSymbol = "X";
         }
         cout << "Player " << turnSymbol << " turn." << endl;
@@ -92,6 +88,13 @@ int main()
             }
         }
 
+        if (turnSymbol == "X"){
+            marks[row - 1][column - 1] = "X";
+        }
+        else{
+            marks[row - 1][column - 1] = "O";
+        }
+
         // sets mark positions to positions on the board
         board[0][0] = marks[0][0];
         board[0][2] = marks[0][1];
@@ -141,26 +144,14 @@ int main()
             win = true;
         }
 
-        // checks for a tie by checking if every spot is filled
-        for (int i = 0; i < 3; i++)
-        {
-            for (int j = 0; j < 3; j++)
-            {
-                if (marks[i][j] != ""){
-                    tie = true;
-                }
-                else{
-                    tie = false;
-                }
-            }
-        }
-        if (tie == true){
-            cout << "Tie game." << endl;
-            win = true;
-        }
-        if (win == true && tie == false){
+        if (win == true){
             cout << "Player " << turnSymbol << " wins." << endl;
         }
+        if (turn == 9 && win != true){      // checks if on last turn and no win for a tie
+            cout << "Tie game." << endl;
+            win = true; // sets win true to exit loop
+        }
+
         turn++;
     }
 }
