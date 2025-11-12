@@ -3,6 +3,7 @@
 //@purpose: create a playable tic-tac-toe game
 
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -10,13 +11,14 @@ int main()
 {
     string x = "X";
     string o = "O";
-    string turnSymbol = ""; // symbol for the turn
+    string turnSymbol = ""; // symbol for the turn alternates between X and O
     int row = 0;
     int column = 0;
     int turn = 1; // counts the turn number
     bool valid = false;
     bool win = false;
     bool open = false;
+    bool tie = false;
 
     string board[5][5] = {
         {" ", " | ", " ", " | ", " "},
@@ -30,6 +32,16 @@ int main()
 
     while (win == false)
     {
+        if ((turn % 2) == 0){       // even turns are O
+            marks[row - 1][column -1] = "O";
+            turnSymbol = "O";
+        }
+        else{                      // odd turns are X
+            marks[row - 1][column - 1] = "X";
+            turnSymbol = "X";
+        }
+        cout << "Player " << turnSymbol << " turn." << endl;
+
         open = false;
         while (open == false)
         {
@@ -79,16 +91,6 @@ int main()
                 open = true;
             }
         }
-        
-        if ((turn % 2) == 0){       // even turns are O
-            marks[row - 1][column -1] = "O";
-            turnSymbol = "O";
-        }
-        else{                      // odd turns are X
-            marks[row - 1][column - 1] = "X";
-            turnSymbol = "X";
-        }
-        turn++;
 
         // sets mark positions to positions on the board
         board[0][0] = marks[0][0];
@@ -115,36 +117,50 @@ int main()
 
         // win conditions
         if (marks[0][0] == turnSymbol && marks[0][1] == turnSymbol && marks[0][2] == turnSymbol){
-            cout << turnSymbol << " wins." << endl;
             win = true;
         }
         if (marks[0][0] == turnSymbol && marks[1][0] == turnSymbol && marks[2][0] == turnSymbol){
-            cout << turnSymbol << " wins." << endl;
             win = true;
         }
         if (marks[0][0] == turnSymbol && marks[1][1] == turnSymbol && marks[2][2] == turnSymbol){
-            cout << turnSymbol << " wins." << endl;
             win = true;
         }
         if (marks[0][2] == turnSymbol && marks[1][2] == turnSymbol && marks[2][2] == turnSymbol){
-            cout << turnSymbol << " wins." << endl;
             win = true;
         }
         if (marks[0][2] == turnSymbol && marks[1][1] == turnSymbol && marks[2][0] == turnSymbol){
-            cout << turnSymbol << " wins." << endl;
             win = true;
         }
         if (marks[2][0] == turnSymbol && marks[2][1] == turnSymbol && marks[2][2] == turnSymbol){
-            cout << turnSymbol << " wins." << endl;
             win = true;
         }
         if (marks[1][0] == turnSymbol && marks[1][1] == turnSymbol && marks[1][2] == turnSymbol){
-            cout << turnSymbol << " wins." << endl;
             win = true;
         }
         if (marks[0][1] == turnSymbol && marks[1][1] == turnSymbol && marks[2][1] == turnSymbol){
-            cout << turnSymbol << " wins." << endl;
             win = true;
         }
+
+        // checks for a tie by checking if every spot is filled
+        for (int i = 0; i < 3; i++)
+        {
+            for (int j = 0; j < 3; j++)
+            {
+                if (marks[i][j] != ""){
+                    tie = true;
+                }
+                else{
+                    tie = false;
+                }
+            }
+        }
+        if (tie == true){
+            cout << "Tie game." << endl;
+            win = true;
+        }
+        if (win == true && tie == false){
+            cout << "Player " << turnSymbol << " wins." << endl;
+        }
+        turn++;
     }
 }
